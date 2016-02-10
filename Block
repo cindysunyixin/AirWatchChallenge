@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Block {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int original = scan.nextInt();
+        int result = helper(original);
+        System.out.println(result);
+    }
+    private static int helper (int original) {
+        int x = original;
+        if (x == 2 || x == 3) {
+            return 1;
+     } else if (x == 1) {
+         return 0;
+        } else {
+          return (2 * (helper (x - 2)));
+        }
+
+
+    }
+}
